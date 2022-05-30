@@ -36,7 +36,7 @@ module.exports = class UsuarioController{
 
             res.render('usuarios/all', {usuarios:data, emptyUsers})    
 
-        }).catch((err)=> console.log(err))
+        }).catch((err)=> console.log())
     }
 
 
@@ -47,7 +47,7 @@ module.exports = class UsuarioController{
 
         Usuario.destroy({where: {id: id}})
         .then(res.redirect('/usuarios'))
-        .catch((err)=>console.log(err))
+        .catch((err)=>console.log())
     }
 
 

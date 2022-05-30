@@ -48,7 +48,6 @@ app.get('/', function(req, res){
 
 */
 
-app.use('/artigos', usuariosRoutes)
 
 
 conn
