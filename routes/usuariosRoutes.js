@@ -3,7 +3,9 @@ const router = express.Router()
 const UsuarioController = require('../controllers/UsuarioController')//minhas rotas
 
 
-
+//router.get('/', function(req, res){
+//   res.sendFile(__dirname, '../', 'views', 'layouts', 'blog')
+//})
 
 
 router.get('/add', UsuarioController.createUsuario)
