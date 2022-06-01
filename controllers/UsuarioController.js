@@ -3,7 +3,7 @@ const Usuario = require('../models/Usuario')
 
 module.exports = class UsuarioController{
     static createUsuario(req, res){
-        res.render('usuarios/create')
+        res.render('principal')
     }
 
 
@@ -16,7 +16,7 @@ module.exports = class UsuarioController{
 
 
         Usuario.create(usuario)
-            .then(res.redirect('/usuarios'))
+            .then(res.redirect('/'))
             .catch(err=>{
                 console.log()
             })
@@ -34,9 +34,9 @@ module.exports = class UsuarioController{
             }
 
 
-            res.render('usuarios/all', {usuarios:data, emptyUsers})    
+            res.render('principal', {usuarios:data, emptyUsers})    
 
-        }).catch((err)=> console.log())
+        }).catch((err)=> console.log('Erro'))
     }
 
 
@@ -76,5 +76,9 @@ module.exports = class UsuarioController{
           .catch((err) => console.log())
       }
 
+
+    static showBlogs(req, res){
+        res.render('blogs')
+    }
 
 }

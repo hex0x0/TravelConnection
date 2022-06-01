@@ -15,6 +15,8 @@ router.get('/edit/:id', UsuarioController.updateUsuario)
 router.post('/edit', UsuarioController.updateUsuarioPost)
 router.get('/', UsuarioController.showUsuarios)
 
+router.get('/blogs', UsuarioController.showBlogs)
+
 
 
 

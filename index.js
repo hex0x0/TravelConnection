@@ -10,9 +10,6 @@ const conn = require('./db/conn')
 
 const Usuario = require('./models/Usuario')
 const usuariosRoutes = require('./routes/usuariosRoutes')
-const { application } = require('express')
-
-
 
 
 
@@ -32,7 +29,7 @@ app.use(express.static('public'))
 //app.use('/alunos', alunoRoutes)
 
 app.use('/', usuariosRoutes)
-
+app.use('/blogs', usuariosRoutes)
 
 
 

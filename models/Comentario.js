@@ -3,6 +3,7 @@ const { DataTypes } = require('sequelize')
 const db = require('../db/conn')
 
 
+
 const Comentario = db.define('Comentario', {
 
 
@@ -21,10 +22,9 @@ const Comentario = db.define('Comentario', {
         default:Date.now()
     },
 
-
-  
-
 })
+
+
 
 
 module.exports = Comentario

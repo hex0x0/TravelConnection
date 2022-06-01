@@ -1,0 +1,33 @@
+<h3>Esse é o menu principal teste 2 </h3>
+
+{{#if emptyUsuarios}}
+<h3>Nada</h3>
+{{/if}}
+
+
+{{#each usuarios}}
+
+    <b>Nome: {{this.nome}}</b>
+    <br>
+    <b>{{this.email}}</b>
+    <br>
+    <b>{{this.password}}</b>
+
+{{/each}}
+
+
+<h1>Inserir aluno</h1>
+<form action="/add" method="POST">
+
+     <label for="nome">Nome:</label>
+    <input type="text" name="nome">
+
+    <label for="matricula">Email:</label>
+    <input type="text" name="email">
+
+    <label for="matricula">Password:</label>
+    <input type="text" name="password">
+
+
+  <input type="submit" value="Inserir">
+</form>

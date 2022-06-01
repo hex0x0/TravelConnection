@@ -26,4 +26,5 @@ const Categoria = db.define('Categoria', {
 })
 
 
+
 module.exports = Categoria
