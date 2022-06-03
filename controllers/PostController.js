@@ -1,4 +1,3 @@
-const Aluno = require('../models/Aluno')
 const Post = require('../models/post')
 
 module.exports = class PostController{
@@ -49,7 +48,7 @@ module.exports = class PostController{
         const id = req.params.id
 
 
-        Aluno.findOne({where:{id:id}})
+        Post.findOne({where:{id:id}})
         .then((data) => {
             res.render('/posts/edit', {post:data})
         })

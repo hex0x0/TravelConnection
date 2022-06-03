@@ -8,8 +8,12 @@ const conn = require('./db/conn')
 
 //Models para o projeto
 
-const Usuario = require('./models/Usuario')
+
 const usuariosRoutes = require('./routes/usuariosRoutes')
+const tagRoutes = require('./routes/TagRoutes')
+const postRoutes = require('./routes/postRoutes')
+const categoriaRoutes = require('./routes/categoriaRoutes')
+const comentarioRoutes = require('./routes/comentarioRoutes')
 
 
 
