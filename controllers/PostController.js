@@ -29,7 +29,7 @@ module.exports = class PostController{
                 emptyPosts = true
             }
 
-            res.render('/posts/all', {posts: data, emptyPosts})
+            res.render('blogs', {posts: data, emptyPosts})
         })
         .catch((err) => console.log())
     }

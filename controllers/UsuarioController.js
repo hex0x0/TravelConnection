@@ -81,4 +81,12 @@ module.exports = class UsuarioController{
         res.render('blogs')
     }
 
+    static aboutUs(req, res){
+        res.render('sobre')
+    }
+
+    static adminAuth(req, res){
+        res.render('login')
+    }
+
 }
