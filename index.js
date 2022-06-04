@@ -35,7 +35,7 @@ app.use(express.static('public'))
 app.use('/', usuariosRoutes)
 app.use('/blogs', postRoutes)
 app.use('/sobre', usuariosRoutes)
-app.use('/admin')
+app.use('/admin', usuariosRoutes)
 
 /*
 

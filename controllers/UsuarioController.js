@@ -3,7 +3,7 @@ const Usuario = require('../models/Usuario')
 
 module.exports = class UsuarioController{
     static createUsuario(req, res){
-        res.render('principal')
+        res.render('admin/create')
     }
 
 
@@ -11,7 +11,7 @@ module.exports = class UsuarioController{
         const usuario = {
             nome:req.body.nome,
             email: req.body.email,
-            password:req.body.password,
+            password:+req.body.password,
         }
 
 
@@ -85,8 +85,6 @@ module.exports = class UsuarioController{
         res.render('sobre')
     }
 
-    static adminAuth(req, res){
-        res.render('login')
-    }
+
 
 }
