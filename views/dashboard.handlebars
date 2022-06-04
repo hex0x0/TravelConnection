@@ -1,0 +1,241 @@
+{{>menuDashboard}}
+
+<section id="actions" class="py-5 mb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-primary btn-block" data-bs-toggle="modal" data-bs-target="#addPostModal">
+                        <i class="fas fa-plus"></i> Adicionar postagem
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-success btn-block" data-bs-toggle="modal" data-bs-target="#addCategoryModal">
+                        <i class="fas fa-plus"></i> Criar categoria
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-warning btn-block" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                        <i class="fas fa-plus"></i> Incluir usuário
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Últimos posts</h4>
+                    </div>
+                    <table class="table table-striped">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>#</th>
+                                <th>Título</th>
+                                <th>Categoria</th>
+                                <th>Data</th>
+                                <th></th>
+                            </tr>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Primeiro post</td>
+                                    <td>Lorem ipsum, dolor sit amet consectetur</td>
+                                    <td>December 15 2019</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-secondary">Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Segundo post</td>
+                                    <td>Lorem ipsum, dolor sit amet consectetur</td>
+                                    <td>December 15 2019</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-secondary">Details</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Terceiro post</td>
+                                    <td>Lorem ipsum, dolor sit amet consectetur</td>
+                                    <td>December 15 2019</td>
+                                    <td>
+                                        <a href="details.html" class="btn btn-secondary">Details</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center bg-primary text-white mb-3">
+                    <div class="card-body">
+                        <h3>Posts</h3>
+                        <h4 class="display-4">
+                            <i class="fas fa-pencil-alt"></i> 6
+                        </h4>
+                        <a href="posts.html" class="btn btn-outline-light btn-sm">Ver posts</a>
+                    </div>
+                </div>
+
+                <div class="card text-center bg-success text-white mb-3">
+                    <div class="card-body">
+                        <h3>Categorias</h3>
+                        <h4 class="display-4">
+                            <i class="fas fa-folder"></i> 4
+                        </h4>
+                        <a href="categorias.html" class="btn btn-outline-light btn-sm">Ver categorias</a>
+                    </div>
+                </div>
+
+                <div class="card text-center bg-warning text-white mb-3">
+                    <div class="card-body">
+                        <h3>Usuários</h3>
+                        <h4 class="display-4">
+                            <i class="fas fa-users"></i> 7
+                        </h4>
+                        <a href="/admin/dashboard/usuarios" class="btn btn-outline-light btn-sm">Ver usuários</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" id="addPostModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Adicionar Post</h5>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/admin/dashboard/add" method="POST">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" class="form-control" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Categoria</label>
+                        <select class="form-control">
+                            <option value="">Dicas</option>
+                            <option value="">Ásia</option>
+                            <option value="">Brasil</option>
+                            <option value="">Europa</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Carregar imagem</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="image" />
+                            <label for="image" class="custom-file-label">Escolha o arquivo</label>
+                        </div>
+                        <small class="form-text text-muted">Máximo de 3mb</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Conteúdo</label>
+                        <textarea name="editor1" class="form-control"></textarea>
+                    </div>
+
+                    <label for="date" class="col-1 col-form-label">Data</label>
+                    <div class="col-5">
+                        <div class="input-group date" id="datepicker">
+                         <input type="text" class="form-control" name="data"/>
+                         <span class="input-group-append">
+                            <span class="input-group-text bg-light d-block">
+                             <i class="fa fa-calendar"></i>
+                           </span>
+                        </span>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-toggle="modal">
+                   Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addCategoryModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-danger">
+                <h5 class="modal-title">Criar Categoria</h5>
+
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" class="form-control" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" data-toggle="modal">
+                    Salvar
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+    
+
+<div class="modal fade" id="addUserModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title">Incluir usuário</h5>
+                <button class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" class="form-control"/>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control"/>    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Senha</label>
+                        <input type="password" class="form-control">
+                    </div>
+
+
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-warning" data-bs-toogle="modal">
+                    Salvar
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

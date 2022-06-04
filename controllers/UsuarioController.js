@@ -16,7 +16,7 @@ module.exports = class UsuarioController{
 
 
         Usuario.create(usuario)
-            .then(res.redirect('/'))
+            .then(res.redirect('dashboard'))
             .catch(err=>{
                 console.log()
             })
@@ -25,18 +25,8 @@ module.exports = class UsuarioController{
     }
 
 
-    static showUsuarios(req, res){
-        Usuario.findAll({raw:true}).then((data)=>{
-            let emptyUsers = false
-
-            if (data.length === 0){
-                emptyUsers = true
-            }
-
-
-            res.render('principal', {usuarios:data, emptyUsers})    
-
-        }).catch((err)=> console.log('Erro'))
+    static showIndex(req, res){
+        res.render('principal')
     }
 
 
@@ -76,15 +66,29 @@ module.exports = class UsuarioController{
           .catch((err) => console.log())
       }
 
-
-    static showBlogs(req, res){
-        res.render('blogs')
-    }
-
-    static aboutUs(req, res){
+   
+    //Apenas exibe a página sobre
+    static showStaticAbout(req, res){
         res.render('sobre')
     }
 
+    static showStaticDash(req, res){
+        res.render('dashboard')
+    }
+   
+    static showUsers(req, res){
+        Usuario.findAll({raw:true}).then((data)=>{
+            let emptyUsers = false
 
+            if (data.length === 0){
+                emptyUsers = true
+            }
+
+
+            res.render('admin/all', {usuarios:data, emptyUsers})    
+
+        }).catch((err)=> console.log('Erro'))
+    }
+ 
 
 }

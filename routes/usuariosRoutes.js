@@ -13,10 +13,9 @@ router.post('/add', UsuarioController.createUsuarioSave)
 router.post('/remove', UsuarioController.removeUsuario)
 router.get('/edit/:id', UsuarioController.updateUsuario)
 router.post('/edit', UsuarioController.updateUsuarioPost)
-router.get('/', UsuarioController.showUsuarios)
-
-router.get('/sobre', UsuarioController.aboutUs)
-
-
+router.get('/', UsuarioController.showIndex)
+router.get('/sobre', UsuarioController.showStaticAbout)
+router.get('/admin/dashboard', UsuarioController.showStaticDash)
+router.get('/admin/dashboard/usuarios', UsuarioController.showUsers)
 
 module.exports = router
