@@ -46,7 +46,7 @@ module.exports = class UsuarioController{
     
         Usuario.findOne({ where: { id: id }, raw: true })
           .then((data) => {
-            res.render('usuarios/edit', { usuario: data })
+            res.render('admin/edit', { usuario: data })
           })
           .catch((err) => console.log())
       }
@@ -62,7 +62,7 @@ module.exports = class UsuarioController{
         }
     
         Usuario.update(usuario, { where: { id: id } })
-          .then(res.redirect('/usuarios'))
+          .then(res.redirect('/admin/dashboard/usuarios'))
           .catch((err) => console.log())
       }
 
