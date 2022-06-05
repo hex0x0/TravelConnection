@@ -10,18 +10,18 @@ const Categoria = db.define('Categoria', {
         allowNull:false,
     },
 
-    slug:{
-        type: DataTypes.STRING,
-        allowNull:false,
-    },
+    // slug:{
+    //     type: DataTypes.STRING,
+    //     allowNull:false,
+    // },
 
 
-    data:{
-        type:DataTypes.DATE,
-        default:Date.now()
+    // data:{
+    //     type:DataTypes.DATE,
+    //     default:Date.now()
 
 
-    }
+    // }
 
 })
 

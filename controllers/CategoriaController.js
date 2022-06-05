@@ -14,7 +14,7 @@ module.exports = class CategoriaController{
         }
 
         Categoria.create(categoria)
-        .then(res.redirect('/categorias'))
+        .then(res.redirect('/admin/dashboard'))
         .catch((err) => console.log())
     }
 
