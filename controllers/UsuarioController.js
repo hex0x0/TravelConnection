@@ -36,7 +36,7 @@ module.exports = class UsuarioController{
 
 
         Usuario.destroy({where: {id: id}})
-        .then(res.redirect('/usuarios'))
+        .then(res.redirect('/admin/dashboard/usuarios'))
         .catch((err)=>console.log())
     }
 

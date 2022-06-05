@@ -54,15 +54,20 @@
                                     <td>{{this.nome}}</td>
                                     <td>{{this.email}}</td>
                                     <td>
-                                        <a href="/admin/dashboard/usuarios/edit/{{this.id}}" class="btn btn-secondary">
-                                            editar
-                                        </a>
+                                        <button type="button">
+                                            <a href="/admin/dashboard/usuarios/edit/{{this.id}}" class="btn btn-secondary">
+                                                editar
+                                            </a>
+                                        </button>
                                     </td>
 
                                     <td>
-                                        <a href="details.html" class="btn btn-secondary">
-                                            deletar
-                                        </a>
+                                        <form action="/admin/dashboard/usuarios/remove" method="POST">
+                                            <input type="hidden" name="id" value={{this.id}}>
+                                            <button type="submit">
+                                                Excluir
+                                            </button>
+                                        </form>
                                     </td>
 
                                 </tr>

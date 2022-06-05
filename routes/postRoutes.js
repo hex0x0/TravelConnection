@@ -15,4 +15,6 @@ router.post('/edit', PostController.updatePostagemPost)
 
 router.get('/', PostController.showPosts)
 
+router.get('/blogs', PostController.showPosts)
+
 module.exports = router

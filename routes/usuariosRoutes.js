@@ -18,4 +18,5 @@ router.get('/sobre', UsuarioController.showStaticAbout)
 router.get('/admin/dashboard', UsuarioController.showStaticDash)
 router.get('/admin/dashboard/usuarios', UsuarioController.showUsers)
 
+
 module.exports = router
