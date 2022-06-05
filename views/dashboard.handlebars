@@ -206,32 +206,28 @@
             </div>
 
             <div class="modal-body">
-                <form>
+                <form class="#" action="/admin/add" method="POST">
                     <div class="form-group">
                         <label for="nome">Nome</label>
-                        <input type="text" class="form-control"/>
+                        <input type="text" class="form-control" name="nome"/>
                     </div>
 
 
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control"/>    
+                        <input type="email" class="form-control" name="email"/>    
                     </div>
 
                     <div class="form-group">
                         <label for="password">Senha</label>
-                        <input type="password" class="form-control">
+                        <input type="password" class="form-control" name="password">
                     </div>
 
-
+                    <input type="submit" class="btn btn-primary btn-block mt-2" value="Salvar" />
                 </form>
             </div>
 
-            <div class="modal-footer">
-                <button class="btn btn-warning" data-bs-toogle="modal">
-                    Salvar
-                </button>
-            </div>
+            
 
         </div>
     </div>
