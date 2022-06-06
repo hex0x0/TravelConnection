@@ -11,6 +11,7 @@ router.get('/edit/:id', CategoriaController.updateCategoria)
 router.post('/edit', CategoriaController.updateCategoriaSave)
 
 router.get('/', CategoriaController.showCategorias)
+//router.get('/admin/dashboard/categorias', CategoriaController.showCategorias)
 
 module.exports = router
 

@@ -17,6 +17,7 @@ const comentarioRoutes = require('./routes/comentarioRoutes')
 
 
 
+
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
 
@@ -39,6 +40,9 @@ app.use('/admin', usuariosRoutes)
 app.use('/admin/dashboard', usuariosRoutes)
 app.use('/admin/dashboard/usuarios', usuariosRoutes)
 app.use('/admin/dashboard/categorias', categoriaRoutes)
+//app.use('/categorias', categoriaRoutes)
+app.use('/admin/dashboard/categorias', categoriaRoutes)
+
 
 /*
 

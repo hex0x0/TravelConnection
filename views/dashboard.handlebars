@@ -18,6 +18,13 @@
                         <i class="fas fa-plus"></i> Incluir usuário
                     </a>
                 </div>
+
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addTagModal">
+                        <i class="fas fa-plus"></i> Incluir tag
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -90,7 +97,7 @@
                         <h4 class="display-4">
                             <i class="fas fa-folder"></i> 4
                         </h4>
-                        <a href="categorias.html" class="btn btn-outline-light btn-sm">Ver categorias</a>
+                        <a href="/admin/dashboard/categorias" class="btn btn-outline-light btn-sm">Ver categorias</a>
                     </div>
                 </div>
 
@@ -118,7 +125,7 @@
                 <button class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
             </div>
             <div class="modal-body">
-                <form action="/admin/dashboard/add" method="POST">
+                <form action="#" method="POST">
                     <div class="form-group">
                         <label for="title">Título</label>
                         <input type="text" class="form-control" name="nome">
@@ -187,11 +194,7 @@
                     <input type="submit" class="btn btn-primary btn-block mt-2" value="Salvar" />
                 </form>
             </div>
-            <div class="modal-footer">
-                <button class="btn btn-success" data-toggle="modal">
-                    Salvar
-                </button>
-            </div>
+            
 
         </div>
     </div>

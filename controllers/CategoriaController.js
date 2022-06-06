@@ -21,6 +21,7 @@ module.exports = class CategoriaController{
     
     static showCategorias(req, res){
         
+   
 
         Categoria.findAll({raw:true})
         .then((data) => {
@@ -32,7 +33,7 @@ module.exports = class CategoriaController{
             }
 
 
-            res.render('/categorias/all', {categorias:data, emptyCategorias})
+            res.render('categorias/all', {categorias:data, emptyCategorias})
 
         })
         .catch((err) => console.log())
