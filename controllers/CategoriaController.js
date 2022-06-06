@@ -45,7 +45,7 @@ module.exports = class CategoriaController{
         const id = req.body.id
 
         Categoria.destroy({where: {id:id}})
-        .then(res.redirect('/categorias'))
+        .then(res.redirect('/admin/dashboard/categorias'))
         .catch((err) => console.log())
 
 

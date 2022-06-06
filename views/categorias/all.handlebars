@@ -51,11 +51,19 @@
                                 <tr>
                                     <td>{{this.id}}</td>
                                     <td>{{this.nome}}</td>
-                                    <td>teste</td>
                                     <td>
                                         <a href="/admin/dashboard/categorias/edit/{{this.id}}" class="btn btn-secondary">
                                             editar
                                         </a>
+                                    </td>
+                                    <td>
+                                       <form action="/admin/dashboard/categorias/remove" method="POST">
+                                            <input type="hidden" name="id" value={{this.id}}>
+                                            <button type="submit">
+                                                excluir
+                                            </button>
+                                       </form>
+
                                     </td>
                                 </tr>
                                 {{/each}}
