@@ -15,17 +15,17 @@ const Post = db.define('Post', {
     },
 
 
-    imagem_post:{
-        type: DataTypes.STRING,
-    },
+    // imagem_post:{
+    //     type: DataTypes.STRING,
+    // },
 
     conteudo:{
         type: DataTypes.TEXT,
     },
 
-    data_post:{
-        type: DataTypes.DATE,
-    },
+    // data_post:{
+    //     type: DataTypes.DATE,
+    // },
     
 
 })
