@@ -1,1 +1,80 @@
-<h3>Ei sou a tag</h3>
+<header id="nav-main" class="py-2 bg-info text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>
+                        <i class="fas fa-pencil-alt"></i> Tags
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="buscar" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 ml-auto">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tags...">
+                        <div class="input-group-append">
+                            <button class="m-1 btn btn-primary">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<section id="posts">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Últimas tags</h4>
+                        </div>
+
+
+                        <table class="table table-striped">
+                            <thead clas="thead-dark">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Categoria</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                {{#each tags}}
+                                <tr>
+                                    <td>{{this.id}}</td>
+                                    <td>{{this.nome}}</td>
+                                    <td>
+                                        <a href="/admin/dashboard/tags/edit/{{this.id}}" class="btn btn-secondary">
+                                            editar
+                                        </a>
+                                    </td>
+                                    <td>
+                                       <form action="/admin/dashboard/tags/remove" method="POST">
+                                            <input type="hidden" name="id" value={{this.id}}>
+                                            <button type="submit">
+                                                excluir
+                                            </button>
+                                       </form>
+
+                                    </td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+

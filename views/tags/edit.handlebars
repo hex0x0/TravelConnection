@@ -1,0 +1,17 @@
+
+<div class="container-fluid lead">
+    <div class="col bg-info">
+        <h1 class="text-center">Editando</h1>
+    </div>
+</div>
+<div class="card-body">
+    <form action="/admin/dashboard/tags/edit" method="POST">
+        <input type="hidden" name="id" value={{tag.id}}>
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" value="{{tag.nome}}">
+        </div>
+        <input type="submit" class="btn btn-primary btn-block mt-2" value="editar">
+
+    </form>
+</div>

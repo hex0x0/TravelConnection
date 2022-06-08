@@ -25,19 +25,23 @@ module.exports = class TagController{
 
 
     static showTags(req, res){
-        // Tag.findAll({raw:true}).then((data)=>{
-        //     let emptyTags = false
-
-        //     if (data.length === 0){
-        //         emptyTags = true
-        //     }
 
 
-        //     res.render('tags/all', {tags:data, emptyUsers})    
+        Tag.findAll({raw:true})
+        .then((data) => {
+            let emptyTags= false
 
-        // }).catch((err)=> console.log())
 
-        res.render('tags/all')
+            if(data.length === 0){
+                emptyTags = true
+            }
+
+
+            res.render('tags/all', {tags:data, emptyTags})
+
+        })
+        .catch((err) => console.log())
+
 
     }
 
@@ -48,7 +52,7 @@ module.exports = class TagController{
 
 
         Tag.destroy({where: {id: id}})
-        .then(res.redirect('/tags'))
+        .then(res.redirect('/admin/dashboard/tags'))
         .catch((err)=>console.log())
     }
 
@@ -69,12 +73,10 @@ module.exports = class TagController{
     
         const tag = {
             nome:req.body.nome,
-            email: req.body.email,
-            password:req.body.password,
         }
     
         Tag.update(tag, { where: { id: id } })
-          .then(res.redirect('/tags'))
+          .then(res.redirect('/admin/dashboard/tags'))
           .catch((err) => console.log())
       }
 
