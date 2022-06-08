@@ -8,10 +8,10 @@ const Tag = db.define('Tag', {
         type: DataTypes.STRING,
         allowNull:false,
     },
-    slug: {
-        type: DataTypes.STRING,
-        allowNull:false,
-    }
+    // slug: {
+    //     type: DataTypes.STRING,
+    //     allowNull:false,
+    // }
 
 })
 

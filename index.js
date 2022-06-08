@@ -43,7 +43,7 @@ app.use('/admin/dashboard/categorias', categoriaRoutes)
 //app.use('/categorias', categoriaRoutes)
 app.use('/admin/dashboard/categorias', categoriaRoutes)
 app.use('/admin/dashboard/posts', postRoutes)
-
+app.use('/admin/dashboard/tags', tagRoutes)
 /*
 
 teste

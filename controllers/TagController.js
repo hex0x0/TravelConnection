@@ -1,3 +1,4 @@
+const { render } = require('express/lib/response')
 const Tag = require('../models/Tag')
 
 
@@ -10,32 +11,34 @@ module.exports = class TagController{
     static createTagSave(req, res){
         const tag = {
             nome:req.body.nome,
-            slug:req.body.slug,
         }
 
 
         Tag.create(tag)
-            .then(res.redirect('/tags'))
-            .catch(err=>{
-                console.log()
-            })
-        
+        .then(res.redirect('/admin/dashboard'))
+        .catch((err) => console.log())
+
+
+        res.redirect('/admin/dashboard')
 
     }
 
 
     static showTags(req, res){
-        Tag.findAll({raw:true}).then((data)=>{
-            let emptyTags = false
+        // Tag.findAll({raw:true}).then((data)=>{
+        //     let emptyTags = false
 
-            if (data.length === 0){
-                emptyTags = true
-            }
+        //     if (data.length === 0){
+        //         emptyTags = true
+        //     }
 
 
-            res.render('tags/all', {tags:data, emptyUsers})    
+        //     res.render('tags/all', {tags:data, emptyUsers})    
 
-        }).catch((err)=> console.log())
+        // }).catch((err)=> console.log())
+
+        res.render('tags/all')
+
     }
 
 
