@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h4>Nova postagem</h4>
+
+            <form action="/admin/dashboard/posts/add" method="POST">
+                <label for="nome">Título</label>
+                <input type="text" name="nome" class="form-control">
+                <label for="categoria">Categoria</label>
+                <select name="CategoriumId" class="custom-select">
+                    {{#if categoriaVazia}}
+                        Vazio
+                    {{/if}}
+                    {{#each categorias}}
+                    <option value="{{this.id}}">{{this.nome}}</option>
+                    {{else}}
+                        <option value="0">Nenhuma categoria cadastrada</option>
+                    {{/each}}
+                </select>
+                <br>
+                <label for="conteudo">Conteúdo</label>
+                <textarea name="conteudo" class="form-control" required>
+
+                </textarea>
+                <input type="submit" class="btn btn-primary btn-block mt-2" value="Salvar" />
+            </form>
+
+        </div>
+    </div>
+</div>
+

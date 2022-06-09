@@ -9,8 +9,8 @@ module.exports = class CategoriaController{
     static createCategoriaSave(req, res){
         const categoria = {
             nome: req.body.nome,
-            slug: req.body.slug,
-            data: req.body.data,
+            // slug: req.body.slug,
+            // data: req.body.data,
         }
 
         Categoria.create(categoria)
@@ -34,11 +34,14 @@ module.exports = class CategoriaController{
 
 
             res.render('categorias/all', {categorias:data, emptyCategorias})
+            
 
         })
         .catch((err) => console.log())
 
     }
+
+    
 
     static removeCategoria(req, res){
 

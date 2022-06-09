@@ -1,21 +1,41 @@
 const Post = require('../models/post')
 
+const Categoria = require('../models/Categoria')
+
+
+
+
 module.exports = class PostController{
     static createPost(req, res){
-        res.render('/posts/create')
+
+        Categoria.findAll({raw:true}).then((data)=>{
+            let categoriaVazia = false
+
+            if(data.length === 0){
+                categoriaVazia = true
+            }
+
+
+            res.render('posts/create', {categorias:data, categoriaVazia})
+
+
+        })
+
+        
     }
 
     static createPostSave(req, res){
+
         const post = {
             nome: req.body.nome,
-            imagem_post: req.body.imagem,
+            // imagem_post: req.body.imagem,
             conteudo: req.body.conteudo,
-            data_post: req.body.data
+            // data_post: req.body.data
         }
 
 
         Post.create(post)
-        .then(res.redirect('/posts'))
+        .then(res.redirect('/admin/dashboard'))
         .catch((err)=>console.log())
 
     }
