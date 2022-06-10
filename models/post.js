@@ -36,9 +36,9 @@ Post.belongsTo(Usuario)
 // Post.belongsToMany(Categoria, {through: 'post_categoria', as:'posts', foreignKey:'post_id'})
 // Categoria.belongsToMany(Post, {through: 'post_categoria', as:'categorias', foreignKey:'categoria_id'})
 
-
-Post.belongsTo(Categoria)
 Categoria.hasMany(Post)
+Post.belongsTo(Categoria)
+
 
 
 

@@ -7,11 +7,10 @@
                 <label for="nome">Título</label>
                 <input type="text" name="nome" class="form-control">
                 <label for="categoria">Categoria</label>
-                <select name="CategoriumId" class="custom-select">
-                    {{#if categoriaVazia}}
-                        Vazio
-                    {{/if}}
+                <select name="categoria" class="custom-select" id="categoria">
+                   
                     {{#each categorias}}
+                        Valor {{this.id}}
                     <option value="{{this.id}}">{{this.nome}}</option>
                     {{else}}
                         <option value="0">Nenhuma categoria cadastrada</option>

@@ -22,3 +22,5 @@ const Usuario = db.define('Usuario', {
 
 
 module.exports = Usuario
+
+

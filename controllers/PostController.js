@@ -30,6 +30,7 @@ module.exports = class PostController{
             nome: req.body.nome,
             // imagem_post: req.body.imagem,
             conteudo: req.body.conteudo,
+            CategoriumId: +req.body.categoria,
             // data_post: req.body.data
         }
 
