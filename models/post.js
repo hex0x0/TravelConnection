@@ -16,9 +16,9 @@ const Post = db.define('Post', {
     },
 
 
-    // imagem_post:{
-    //     type: DataTypes.STRING,
-    // },
+    file:{
+        type: DataTypes.STRING,
+    },
 
     conteudo:{
         type: DataTypes.TEXT,

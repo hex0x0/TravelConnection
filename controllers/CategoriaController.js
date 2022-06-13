@@ -23,7 +23,7 @@ module.exports = class CategoriaController{
         
    
 
-        Categoria.findAll({raw:true})
+        Categoria.findAll('{raw:true}')
         .then((data) => {
             let emptyCategorias = false
 

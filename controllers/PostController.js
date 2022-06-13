@@ -3,6 +3,7 @@ const Post = require('../models/post')
 const Categoria = require('../models/Categoria')
 
 
+const multer = require('multer')
 
 
 module.exports = class PostController{
@@ -26,11 +27,19 @@ module.exports = class PostController{
 
     static createPostSave(req, res){
 
+        // const upload = multer({dest:'/public/images'})
+
+        // let up = upload.single('file')
+
+        
+
+
         const post = {
             nome: req.body.nome,
             // imagem_post: req.body.imagem,
             conteudo: req.body.conteudo,
             CategoriumId: +req.body.categoria,
+            file: req.body.file,
             // data_post: req.body.data
         }
 
