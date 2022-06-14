@@ -4,22 +4,31 @@ const Categoria = require('../models/Categoria')
 
 
 const multer = require('multer')
+const Tag = require('../models/Tag')
 
 
 module.exports = class PostController{
     static createPost(req, res){
 
-        Categoria.findAll({raw:true}).then((data)=>{
-            let categoriaVazia = false
+        // Categoria.findAll({raw:true}).then((data)=>{
+        //     let categoriaVazia = false
 
-            if(data.length === 0){
-                categoriaVazia = true
-            }
-
-
-            res.render('posts/create', {categorias:data, categoriaVazia})
+        //     if(data.length === 0){
+        //         categoriaVazia = true
+        //     }
 
 
+        //     res.render('posts/create', {categorias:data, categoriaVazia})
+
+
+        // })
+
+        Categoria.findAll({raw:true}).then((dataCat) => {
+            req.data = dataCat
+        }).then(() => {
+            Tag.findAll({raw:true}).then((dataTag) =>{
+                res.render('posts/create', {tags:dataTag, categorias:req.data})
+            })
         })
 
         

@@ -26,15 +26,16 @@
 
                 <fieldset class="form-group">
                     <legend>Tags</legend>
+                     {{#each tags}}
                     <div class="form-check">
-                        <input type="checkbox"class="form-check-input" id="check1">
-                        <label for="tag1">Tag1</label>
+                       
+                        <input type="checkbox"class="form-check-input" id="{{this.id}}">
+                        <label for="tag1">{{this.nome}}</label>
+                       
                     </div>
+                     {{/each}}
 
-                    <div class="form-check">
-                        <input type="checkbox"class="form-check-input" id="check2">
-                        <label for="tag2">Tag2</label>
-                    </div>
+                    
 
                 </fieldset>
 
