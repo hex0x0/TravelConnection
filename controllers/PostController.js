@@ -50,17 +50,19 @@ module.exports = class PostController{
 
         //  console.log(file)
         
+        const {filename, size} = req.file
+    
 
         const post = {
             nome: req.body.nome,
             // imagem_post: req.body.imagem,
             conteudo: req.body.conteudo,
             CategoriumId: +req.body.categoria,
-            file: req.body.file,
+            file: filename,
             // data_post: req.body.data
         }
 
-        console.log(req.body.file)
+        
 
         Post.create(post)
         .then(res.redirect('/admin/dashboard'))

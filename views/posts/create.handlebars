@@ -4,13 +4,13 @@
         <div class="card-body">
             <h4>Nova postagem</h4>
 
-            <form action="/admin/dashboard/posts/add" method="POST">
+            <form action="/admin/dashboard/posts/add" method="POST" enctype="multipart/form-data">
                 <label for="nome"><strong>Título</strong></label>
                 <input type="text" name="nome" class="form-control">
                 <br>
                 <div class="form-group">
                     <label for="file">File Upload</label>
-                    <input type="file" name="file" class="form-control" accept="image/*" enctype="multipart/form-data">
+                    <input type="file" name="file" class="form-control" accept="image/*">
                 </div>
                 <br>
                 <label for="categoria"><strong>Categoria</strong></label>
