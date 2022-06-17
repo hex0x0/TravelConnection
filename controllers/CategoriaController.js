@@ -3,7 +3,7 @@ const Categoria = require('../models/Categoria')
 module.exports = class CategoriaController{
 
     static createCategoria(req, res){
-        res.render('/categorias/create')
+        //res.render('categorias/create')
     }
 
     static createCategoriaSave(req, res){
@@ -23,7 +23,7 @@ module.exports = class CategoriaController{
         
    
 
-        Categoria.findAll('{raw:true}')
+        Categoria.findAll({raw:true})
         .then((data) => {
             let emptyCategorias = false
 
@@ -33,7 +33,7 @@ module.exports = class CategoriaController{
             }
 
 
-            res.render('categorias/all', {categorias:data, emptyCategorias})
+            res.render('categorias/all', {cats:data, emptyCategorias})
             
 
         })

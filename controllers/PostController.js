@@ -60,6 +60,7 @@ module.exports = class PostController{
             // data_post: req.body.data
         }
 
+        console.log(req.body.file)
 
         Post.create(post)
         .then(res.redirect('/admin/dashboard'))

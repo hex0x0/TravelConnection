@@ -51,15 +51,16 @@
   <!-- começa da linha-->
 
   <div class="row">
+    {{#each posts}}
     <div class="col-lg-4 col-md 6 col-sm-12">
       <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
+        <img src="../images/{{this.file}}" class="img-fluid">
         <div class="card-body">
           <div class="card-title">
-            <h3>Museu do Louvre</h3>
+            <h3>{{this.nome}}</h3>
           </div>
           <div class="card-text">
-              <p>A França desperta no imaginário das pessoas um desejo incrível de conhecer o país, não é à toa que é o país mais visitado do mundo.</div>
+              <p>{{this.conteudo}}</div>
           <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
         </div>
         <div class="card-footer">
@@ -69,111 +70,7 @@
        </div>
       </div>
     </div>
-
-
-    <div class="col-lg-4 col-md 6 col-sm-12">
-      <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
-        <div class="card-body">
-          <div class="card-title">
-            <h3>Rio de Janeiro</h3>
-          </div>
-          <div class="card-text">
-              <p>O Rio de Janeiro é uma grande cidade brasileira à beira-mar, famosa pelas praias de Copacabana e Ipanema, pela estátua de 38 metros de altura do Cristo Redentor.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
-        <div class="card-footer">
-           <div>
-             <h6> Anonymous | December 25, 2022</h6>
-           </div>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="col-lg-4 col-md 6 col-sm-12">
-      <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
-        <div class="card-body">
-          <div class="card-title">
-            <h3>Museu do Louvre</h3>
-          </div>
-          <div class="card-text">
-              <p>A França desperta no imaginário das pessoas um desejo incrível de conhecer o país, não é à toa que é o país mais visitado do mundo.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
-        <div class="card-footer">
-          <div>
-            <h6> Anonymous | December 25, 2022</h6>
-          </div>
-       </div>
-      </div>
-    </div>
-
-    <div class="col-lg-4 col-md 6 col-sm-12">
-      <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
-        <div class="card-body">
-          <div class="card-title">
-            <h3>Museu do Louvre</h3>
-          </div>
-          <div class="card-text">
-              <p>A França desperta no imaginário das pessoas um desejo incrível de conhecer o país, não é à toa que é o país mais visitado do mundo.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
-        <div class="card-footer">
-          <div>
-            <h6> Anonymous | December 25, 2022</h6>
-          </div>
-       </div>
-      </div>
-    </div>
-
-
-    <div class="col-lg-4 col-md 6 col-sm-12">
-      <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
-        <div class="card-body">
-          <div class="card-title">
-            <h3>Museu do Louvre</h3>
-          </div>
-          <div class="card-text">
-              <p>A França desperta no imaginário das pessoas um desejo incrível de conhecer o país, não é à toa que é o país mais visitado do mundo.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
-        <div class="card-footer">
-          <div>
-            <h6> Anonymous | December 25, 2022</h6>
-          </div>
-       </div>
-      </div>
-    </div>
-
-
-    <div class="col-lg-4 col-md 6 col-sm-12">
-      <div class="card mb-5 shadow-sm">
-        <img src="../images/test-img-300x196.jpg" class="img-fluid">
-        <div class="card-body">
-          <div class="card-title">
-            <h3>Museu do Louvre</h3>
-          </div>
-          <div class="card-text">
-              <p>A França desperta no imaginário das pessoas um desejo incrível de conhecer o país, não é à toa que é o país mais visitado do mundo.</p>
-          </div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
-        <div class="card-footer">
-          <div>
-            <h6> Anonymous | December 25, 2022</h6>
-          </div>
-       </div>
-      </div>
-    </div>
-
+    {{/each}}
 
   </div>
 
