@@ -1,10 +1,12 @@
+//models
 const Post = require('../models/post')
-
 const Categoria = require('../models/Categoria')
-
-
-const multer = require('multer')
 const Tag = require('../models/Tag')
+
+
+//const {mv} = require('express-fileupload')
+
+
 
 
 module.exports = class PostController{
@@ -36,12 +38,18 @@ module.exports = class PostController{
 
     static createPostSave(req, res){
 
-        // const upload = multer({dest:'/public/images'})
+        // let file = req.body.file
+        // let filename = file.filename
 
-        // let up = upload.single('file')
+        // let dirUploads = './public/images'
 
+        // file.mv(dirUploads + filename, (err) =>{
+        //     if(err) throw err
+        // })
+
+
+        //  console.log(file)
         
-
 
         const post = {
             nome: req.body.nome,
@@ -111,5 +119,7 @@ module.exports = class PostController{
         .catch((err) => console.log())
 
     }
+
+    
 
 }
