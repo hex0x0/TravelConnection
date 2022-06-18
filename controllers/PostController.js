@@ -55,7 +55,7 @@ module.exports = class PostController{
 
         const post = {
             nome: req.body.nome,
-            // imagem_post: req.body.imagem,
+            descricao:req.body.descricao,
             conteudo: req.body.conteudo,
             CategoriumId: +req.body.categoria,
             file: filename,
@@ -71,15 +71,24 @@ module.exports = class PostController{
     }
 
     static showPosts(req, res){
+
         Post.findAll({raw: true})
         .then((data) => {
-            let emptyPosts = false
+            // let emptyPosts = false
 
-            if(data.length === 0){
-                emptyPosts = true
-            }
+            // if(data.length === 0){
+            //     emptyPosts = true
+            // }
 
-            res.render('blogs', {posts: data, emptyPosts})
+            // res.render('blogs', {posts: data, emptyPosts})
+
+            req.data = data
+
+
+        }).then(() =>{
+            Categoria.findAll({raw:true}).then((data) => {
+                res.render('blogs', {posts: req.data, categorias:data})
+            })
         })
         .catch((err) => console.log())
     }

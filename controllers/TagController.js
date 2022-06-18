@@ -19,7 +19,7 @@ module.exports = class TagController{
         .catch((err) => console.log())
 
 
-        res.redirect('/admin/dashboard')
+        //res.redirect('/admin/dashboard')
 
     }
 

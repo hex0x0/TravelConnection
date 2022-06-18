@@ -1,5 +1,5 @@
  {{>menu}}
- <section id="articles_header">
+ <section id="articles_header mb-4">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8">
@@ -42,15 +42,42 @@
   </section>
   
   
+  <div class="mt-4"></div>
   
 
   <!--Seta as margens superior e inferior-->
-  <hr class="my-4">
+  {{!-- <hr class="my-4"> --}}
 
 
   <!-- começa da linha-->
+  
+    <div class="container d-flex justify-content-between">
+      <div class="row">
+        {{#each posts}}
+        <div class="col-4">
+            <div class="card">
+            <div class="card-title text-center">
+              <h4 class="lead">{{this.nome}}</h4>
+              <small>{{this.descricao}}</small>
+              <img src="../images/{{this.file}}" width="300" height="196">
+            </div>
+            <div class="card-body justify-text">
+              <p>{{this.conteudo}}</p>
+            </div>
+            <div class="card-footer">
+              <small>Categoria: {{this.CategoriumId}}</small>
+              <br>
+              <small>Data: {{this.data}}</small>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+    </div>
+  
+  </div>
+  
 
-  <div class="row">
+  {{!-- <div class="row">
     {{#each posts}}
     <div class="col-lg-4 col-md 6 col-sm-12">
       <div class="card mb-5 shadow-sm">
@@ -60,18 +87,19 @@
             <h3>{{this.nome}}</h3>
           </div>
           <div class="card-text">
-              <p>{{this.conteudo}}</div>
-          <a href="#" class="btn btn-outline-primary rounded-0 float-end">Read more</a>
-        </div>
+              <small>{{this.descricao}}</small>
+              <a href="#" class="btn btn-outline-primary rounded-0 float-end" data-bs-toggle="modal" data-bs-target="#postModal">Read more</a>
+          </div>
+          <p>{{this.conteudo}}</p>
         <div class="card-footer">
           <div>
-            <h6> Anonymous | December 25, 2022</h6>
+            <h6> Author | December 25, 2022</h6>
           </div>
        </div>
       </div>
     </div>
     {{/each}}
 
-  </div>
+  </div> --}}
 
 {{>rodape}}

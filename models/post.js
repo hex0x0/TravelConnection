@@ -14,7 +14,10 @@ const Post = db.define('Post', {
         allowNull:false,
 
     },
-
+    descricao:{
+        type:DataTypes.STRING,
+        allowNull:false,
+    },
 
     file:{
         type: DataTypes.STRING,
@@ -22,6 +25,10 @@ const Post = db.define('Post', {
 
     conteudo:{
         type: DataTypes.TEXT,
+    },
+    data:{
+        type:DataTypes.DATE,
+        defaultValue:DataTypes.NOW(),
     },
 
     // data_post:{
