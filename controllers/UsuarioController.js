@@ -1,5 +1,6 @@
 const Usuario = require('../models/Usuario')
-
+// const Post = require('../models/post')
+// const Categoria = require('../models/Categoria')
 
 module.exports = class UsuarioController{
     static createUsuario(req, res){
@@ -26,6 +27,27 @@ module.exports = class UsuarioController{
 
 
     static showIndex(req, res){
+
+        // Post.findAll({raw: true})
+        // .then((data) => {
+        //     // let emptyPosts = false
+
+        //     // if(data.length === 0){
+        //     //     emptyPosts = true
+        //     // }
+
+        //     // res.render('blogs', {posts: data, emptyPosts})
+
+        //     req.data = data
+
+
+        // }).then(() =>{
+        //     Categoria.findAll({raw:true}).then((data) => {
+        //         res.render('principal', {posts: req.data, categorias:data})
+        //     })
+        // })
+        // .catch((err) => console.log())
+
         res.render('principal')
     }
 
