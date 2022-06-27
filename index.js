@@ -33,7 +33,10 @@ const comentarioRoutes = require('./routes/comentarioRoutes')
 
 
 const fileUpload = require('express-fileupload')
-app.engine('handlebars', exphbs())
+app.engine('handlebars', exphbs({runtimeOptions:{
+  allowProtoPropertiesByDefault: true,
+  allowProtoMethodsByDefault: true,
+}}))
 app.set('view engine', 'handlebars')
 
 app.use(

@@ -98,7 +98,7 @@ module.exports = class PostController{
 
 
         Post.destroy({where: {id:id}})
-        .then(res.redirect('/posts'))
+        .then(res.redirect('/admin/dashboard/posts/all'))
         .catch((err)=> console.log())
 
     }
@@ -107,28 +107,61 @@ module.exports = class PostController{
         const id = req.params.id
 
 
-        Post.findOne({where:{id:id}})
-        .then((data) => {
-            res.render('/posts/edit', {post:data})
-        })
-        .catch((err)=>console.log())
+        // Post.findOne({where:{id:id}})
+        // .then((data) => {
+        //     res.render('posts/edit', {post:data})
+        // })
+        // .catch((err)=>console.log())
+
+        Post.findOne({where:{id:id}}).then((data) => {
+            req.data = data
+        }).then(() => {
+            Categoria.findAll({raw:true}).then((data) => {
+                res.render('posts/edit', {post:req.data, categorias:data})
+            })
+        }).catch((err) => console.log())
 
     }
 
     static updatePostagemPost(req, res){
         const id = req.body.id
-
+        const {filename, size} = req.file
         const post = {
             nome: req.body.nome,
-            imagem_post: req.body.imagem,
+            descricao:req.body.descricao,
             conteudo: req.body.conteudo,
-            data_post: req.body.data
+            CategoriumId: +req.body.categoria,
+            file: filename,
         }
 
 
         Post.update(post, {where: {id:id}})
-        .then(res.redirect('/posts'))
+        .then(res.redirect('/admin/dashboard/posts/all'))
         .catch((err) => console.log())
+
+    }
+
+    static showOnDashboard(req, res){
+
+
+        Post.findAll({raw:true}).then((data) => {
+            res.render('posts/all', {posts:data})
+        })
+
+        // Post.findAll({raw:true}).then((data) => {
+        //     // res.render('posts/all',{posts:data})
+
+        //     req.data = data
+        // }).then(() => {
+
+
+        //     Categoria.findAll({raw:true}).then((data) => {
+        //         res.render('posts/all',{posts:req.data, categorias:data})
+        //     })
+
+        // }).catch((err) => console.log())
+
+
 
     }
 

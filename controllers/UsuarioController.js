@@ -1,5 +1,5 @@
 const Usuario = require('../models/Usuario')
-// const Post = require('../models/post')
+const Post = require('../models/post')
 // const Categoria = require('../models/Categoria')
 
 module.exports = class UsuarioController{
@@ -95,7 +95,18 @@ module.exports = class UsuarioController{
     }
 
     static showStaticDash(req, res){
-        res.render('dashboard')
+
+        Post.findAll({raw:true}).then((data) => {
+            let emptyPosts = false
+
+            if(data.length === 0){
+                emptyPosts = true
+            }
+
+            res.render('dashboard', {posts:data, emptyPosts})
+        })
+
+        
     }
    
     static showUsers(req, res){

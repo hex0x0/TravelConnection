@@ -27,11 +27,15 @@ router.post('/add', upload.single('file'), PostController.createPostSave)
 router.post('/remove', PostController.removePost)
 
 router.get('/edit/:id', PostController.updatePost)
-router.post('/edit', PostController.updatePostagemPost)
+router.post('/edit', upload.single('file'), PostController.updatePostagemPost)
 
 router.get('/', PostController.showPosts)
 
-router.get('/blogs', PostController.showPosts)
+router.get('/all', PostController.showOnDashboard)
+
+
+
+
 
 //rota que recebe o arquivo
 
