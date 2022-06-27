@@ -1,6 +1,6 @@
 const Usuario = require('../models/Usuario')
 const Post = require('../models/post')
-// const Categoria = require('../models/Categoria')
+const Categoria = require('../models/Categoria')
 
 module.exports = class UsuarioController{
     static createUsuario(req, res){
@@ -47,6 +47,12 @@ module.exports = class UsuarioController{
         //     })
         // })
         // .catch((err) => console.log())
+
+        // Promise.all([Post.findAll({raw:true, nest:true}), Categoria.findAll({raw:true, nest:true, include: {model: Categoria}}),])
+        // .then((data) => {
+        //     let categorias_post = JSON.stringify(data[1])
+        //     res.render('principal', {posts: data[0], categorias: data[1]})
+        // })
 
         res.render('principal')
     }
